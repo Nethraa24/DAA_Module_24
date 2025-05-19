@@ -14,24 +14,43 @@ When passing through a path cell containing a cherry, you pick it up, and the ce
 
 
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+1. Use a 3D DP table dp[x1][y1][x2] to store the maximum cherries collected when two players move from (0,0) to (x1,y1) and (x2,y2), where y2 = x1 + y1 - x2 
+2. If either player goes out of bounds or hits a thorn (-1), return -∞ (invalid path). If both are at (0,0), return grid[0][0].
+3. Try all four possible moves (player1 and player2 each move either up or left), and take the max result.
+4. Collect cherries from both positions (only once if both are at the same cell).
+5. Start recursion from bottom-right corner (n-1,n-1) for both players and return max(0, result) to handle case where no valid path exists.
 
 ## Program:
 ```
-/*
 To implement the program for Cherry pickup problem.
-
-
-Developed by: 
-Register Number:  
-*/
+Developed by: J NETHRAA
+Register Number:  212222100031
+```
+```
+class Solution(object):
+    def cherryPickup(self, grid):
+        dp=[[0 for j in range(len(grid))]for i in range(len(grid))]
+        for i in range(len(grid)):
+            for j in range(len(grid)-1):
+                dp[i][j]=grid[i-1][j-1]
+        res=len(grid)+1
+       
+          
+        ROW_NUM = len(grid)
+        COL_NUM = len(grid[0])
+        return dp[0][COL_NUM - 1]*res
+        
+grid=[[3,1,1],
+      [2,5,1],
+      [1,5,5],
+      [2,1,1]]
+obj=Solution()
+print(obj.cherryPickup(grid))
 ```
 
 ## Output:
+![image](https://github.com/user-attachments/assets/ce1cf2d2-ba57-464c-a9d4-139ea9283192)
+
 
 
 
