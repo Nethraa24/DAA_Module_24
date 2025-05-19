@@ -17,8 +17,8 @@ To Solve Travelling Sales man Problem for the following graph.
 ## Program:
 ```
 /*
-Developed by: Jivan Karthec B S
-Register Number: 212222100017
+Developed by: J NETHRAA
+Register Number: 212222100031
 */
 ```
 ```
